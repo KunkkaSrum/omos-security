@@ -7,7 +7,7 @@ package com.omos.security.core.properties;
  * @author zhailiang
  *
  */
-public class WeixinProperties extends SocialProperties {
+public class WeixinProperties extends QQSocialProperties {
 	
 	/**
 	 * 第三方id，用来决定发起第三方登录的url，默认是 weixin。

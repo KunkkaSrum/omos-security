@@ -7,7 +7,7 @@ package com.omos.security.core.properties;
  * @author zhailiang
  *
  */
-public class QQProperties extends SocialProperties {
+public class QQProperties extends QQSocialProperties {
 	
 	private String providerId = "qq";
 

@@ -3,6 +3,7 @@
  */
 package com.omos.security.browser;
 
+import com.omos.security.browser.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
 import com.omos.security.core.authentication.AbstractChannelSecurityConfig;
 import com.omos.security.core.properties.SecurityConstants;
 import com.omos.security.core.properties.SecurityProperties;
@@ -16,6 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 import javax.sql.DataSource;
 
@@ -35,14 +37,14 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
-//	@Autowired
-//	private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
+	@Autowired
+	private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
 //
 	@Autowired
 	private ValidateCodeSecurityConfig validateCodeSecurityConfig;
 
-//	@Autowired
-//	private SpringSocialConfigurer imoocSocialSecurityConfig;
+	@Autowired
+	private SpringSocialConfigurer imoocSocialSecurityConfig;
 //
 //	@Autowired
 //	private SessionInformationExpiredStrategy sessionInformationExpiredStrategy;
@@ -62,11 +64,11 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 
 		http
 				.apply(validateCodeSecurityConfig)
-//				.and()
-//				.apply(smsCodeAuthenticationSecurityConfig)
 				.and()
-//				.apply(imoocSocialSecurityConfig)
-//				.and()
+				.apply(smsCodeAuthenticationSecurityConfig)
+				.and()
+				.apply(imoocSocialSecurityConfig)
+				.and()
 				.rememberMe()
 				.tokenRepository(persistentTokenRepository())
 				.tokenValiditySeconds(securityProperties.getBrowser().getRememberMeSeconds())
