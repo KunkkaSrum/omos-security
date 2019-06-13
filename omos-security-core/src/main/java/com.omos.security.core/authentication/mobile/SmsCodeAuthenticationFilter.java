@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.omos.security.browser.authentication.mobile;
+package com.omos.security.core.authentication.mobile;
 
 import com.omos.security.core.properties.SecurityConstants;
 import org.springframework.security.authentication.AuthenticationServiceException;

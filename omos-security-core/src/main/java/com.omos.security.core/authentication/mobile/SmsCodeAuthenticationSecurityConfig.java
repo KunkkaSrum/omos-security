@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.omos.security.browser.authentication.mobile;
+package com.omos.security.core.authentication.mobile;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

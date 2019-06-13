@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.omos.security.browser.authentication.mobile;
+package com.omos.security.core.authentication.mobile;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
